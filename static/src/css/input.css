@@ -48,7 +48,24 @@
     align-items: center;
 
 }
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 700px){
+    .tools{
+    width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2%;
+    }
+    #metier{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+}
+
+@media only screen and (min-width: 600px) and (max-width : 700px) {
     #metier{
         display: flex;
         flex-direction: row;
@@ -57,7 +74,7 @@
 
     }
     .tools{
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2%;
 }
     .posts{
