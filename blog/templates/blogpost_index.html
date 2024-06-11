@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block head_extra %}{% block title %} <title>blog home</title> {% endblock %}{% endblock %}
+{% block content %}
+<article class="mx-auto posts">
+    {% for post in post %}
+    <div class="m-4 p-1 mx-auto shadow-lg rounded-lg transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+        <a href="{% url 'blog-detail' pk=post.pk %}" class="block">
+            <img class="object-contain object-contain mx-auto rounded-t-lg"
+                 src="{{ post.thumbnail.url }}" alt="Post_Thumbnail">
+            <div class="p-4 ">
+                <h2 class=" dark:text-white text-xs text-center font-bold text-gray-800">{{ post.title }}</h2>
+                <p class=" text-xs text-center dark:text-white text-sm text-gray-600 mt-2">
+                    {{ post.created_on.date }} | Categories:&nbsp;
+                    {% for category in post.categories.all %}
+                    <span class=" text-xs text-center inline-block dark:text-white bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2">{{ category.name }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</article>
+
+{% endblock %}
