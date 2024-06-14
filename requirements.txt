@@ -32,7 +32,6 @@ psycopg2-binary==2.9.9
 ptyprocess==0.7.0
 pyproject_hooks==1.0.0
 pyrsistent==0.19.3
-PySide2==5.15.2
 pytesseract==0.3.10
 pytz==2022.6
 pywin32-ctypes==0.2.2
