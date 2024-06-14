@@ -1,1 +1,1 @@
-web: gunicorn Univers.wsgi --log-file -
+web: gunicorn Univers.wsgi.application --log-file -
